@@ -1,13 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
- "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:h="http://java.sun.com/jsf/html">
-<h:head>
-	<title>Facelet Title</title>
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <title>Facelet Title</title>
         <style>
-            
-        * {box-sizing: border-box}
+            * {box-sizing: border-box}
             body {font-family: "Lato", sans-serif;
                   background-color: #93B874;}
 
@@ -60,8 +62,8 @@
 
             /* Full-width input fields */
             input[type=text], input[type=password] {
-                width: 100%;
-                padding: 3px 5px;
+                width: 20%;
+                padding: 8px 5px;
                 margin: 8px 0;
                 display: inline-block;
                 border: 1px solid #93B874;
@@ -109,32 +111,112 @@
                     width: 100%;
                 }
             }
-</style>
+            
 
-</h:head>
-    
-<h:body>
-     <h:outputScript library="js" name="common.js" />
-	<h:form>
-            <table>
-                <tr>
-                    <td>
-		<p>Welcome #{login.user}</p>
-                </td>
-           
-                <td>
-		<h:commandLink action="#{login.logout}" value="Logout"></h:commandLink>
-                 </td>
-                  </tr>
-                </table>
-            <div class="tab">
-            <button class="tablinks" onclick="openCity(event, 'Track')" id="defaultOpen">Track Vehicle</button>
-           </div>
+            ol.progtrckr {
+                margin: 0;
+                padding: 0;
                 
-            <div id="Track" class="tabcontent">
-            Tracking....
-            </div>
+            }
+
+            ol.progtrckr li {
+                display: inline-block;
+                text-align: center;
+                line-height: 3.5em;
+            }
+
+            ol.progtrckr[data-progtrckr-steps="2"] li { width: 49%; }
+            ol.progtrckr[data-progtrckr-steps="3"] li { width: 33%; }
+            ol.progtrckr[data-progtrckr-steps="4"] li { width: 24%; }
+            ol.progtrckr[data-progtrckr-steps="5"] li { width: 19%; }
+            ol.progtrckr[data-progtrckr-steps="6"] li { width: 16%; }
+            ol.progtrckr[data-progtrckr-steps="7"] li { width: 14%; }
+            ol.progtrckr[data-progtrckr-steps="8"] li { width: 12%; }
+            ol.progtrckr[data-progtrckr-steps="9"] li { width: 11%; }
+
+            ol.progtrckr li.progtrckr-done {
+                color: black;
+                border-bottom: 4px solid yellowgreen;
+            }
+            ol.progtrckr li.progtrckr-todo {
+                color: silver; 
+                border-bottom: 4px solid silver;
+            }
+
+            ol.progtrckr li:after {
+                content: "\00a0\00a0";
+            }
+            ol.progtrckr li:before {
+                position: relative;
+                bottom: -2.5em;
+                float: left;
+                left: 50%;
+                line-height: 1em;
+            }
+            ol.progtrckr li.progtrckr-done:before {
+                content: "\2713";
+                color: white;
+                background-color: yellowgreen;
+                height: 2.2em;
+                width: 2.2em;
+                line-height: 2.2em;
+                border: none;
+                border-radius: 2.2em;
+            }
+            ol.progtrckr li.progtrckr-todo:before {
+                content: "\039F";
+                color: silver;
+                background-color: white;
+                font-size: 2.2em;
+                bottom: -1.2em;
+            }
+
+        </style>   
+    </h:head>
+    <h:body>
+        <h:outputScript library="js" name="common.js" />
+        <h:form>        
+            <p>Welcome #{login.user}</p>
+            <h:commandLink action="#{login.logout}" value="Logout"></h:commandLink><br></br>   
+            
+        </h:form>
+        
+       <div class="tab">      
+            <button class="tablinks" onclick="openCity(event, 'Journey')">Click here to track your vehicle</button>
+        </div>
+        
+
+        <div id="Journey" class="tabcontent">
+            <h:form>
+                <h3>Tracking</h3>
+                  
+                <ol class="progtrckr" data-progtrckr-steps="5">
+                    <li class="progtrckr-done">Route1</li><!--
+                    --><li class="progtrckr-done">Route2</li><!--
+                    --><li class="progtrckr-done">Route3</li><!--
+                    --><li class="progtrckr-todo">Route4</li>
+                    
+                </ol>                   
+            </h:form>
+             <h:form>
                 
-	</h:form>
-</h:body>
+                <div class="container">
+                    <h3>Register here</h3>
+                    <table>
+                        <tr>
+                            <td>
+                                <label><b>Vehicle no</b></label></td>
+                            <td><h:inputText value="sd" pt:placeholder="Enter Vehicle#"/></td>
+                        </tr>
+                    </table>
+                    <div class="clearfix">
+                        <h:commandButton value="Submit" action="#{track_journey.add()}"/>
+                    </div>
+                </div>
+            </h:form> 
+
+     
+        </div>
+
+    </h:body>
 </html>

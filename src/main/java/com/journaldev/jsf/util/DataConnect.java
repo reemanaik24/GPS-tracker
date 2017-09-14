@@ -44,10 +44,18 @@ public class DataConnect {
             System.out.println("user = " + user);
             System.out.println("pass = " + pwd);
             */
+             /*Class.forName(System.getenv("MYSQL_DRIVER"));
+	String url = System.getenv("MYSQL_URL");;
+        String user= System.getenv("MYSQL_USER");
+        String pwd = System.getenv("MYSQL_ROOT_PASSWORD"); */
+            
             Class.forName("com.mysql.jdbc.Driver");
             String url = "jdbc:mysql://10.10.155.158:3306/gps";
             String user= "root";
             String pwd = "";
+            
+            
+            
             conn = DriverManager.getConnection(url, user, pwd);
             return conn;
         } catch (Exception e) {

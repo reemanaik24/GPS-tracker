@@ -133,8 +133,9 @@
 
         <div id="Register" class="tabcontent">
             <h:form>
-                <h3>Register here</h3>
+                
                 <div class="container">
+                    <h3>Register here</h3>
                     <table>
                         <tr>
                             <td>
@@ -145,7 +146,7 @@
 
                         <tr><td>    <label><b>Vehicle type&nbsp;&nbsp;</b></label></td>
                             <td>    <h:selectOneMenu value = "#{vehicle.vehicle_type}">
-                                    <f:selectItem itemValue = "" itemLabel = "---Select---" /> 
+                                    <f:selectItem itemValue = "" itemLabel = "---------------Select---------------" /> 
                                     <f:selectItem itemValue = "Car" itemLabel = "Car" /> 
                                     <f:selectItem itemValue = "Truck" itemLabel = "Truck" />
                                     <f:selectItem itemValue = "Bus" itemLabel = "Bus" /> 
@@ -169,8 +170,9 @@
 
         <div id="Route" class="tabcontent">
             <h:form>
-                <h3>Add route here</h3>
+               
                 <div class="container">
+                     <h3>Add route here</h3>
                     <table>
                         <tr>
                             <td> <label><b>Route1&nbsp;&nbsp;</b></label></td>
@@ -178,44 +180,44 @@
 
 
                             <td> <h:selectOneMenu value="#{route.route1}" >
-                                    <f:selectItem itemValue = "" itemLabel = "---Select---" /> 
+                                    <f:selectItem itemValue = "" itemLabel = "---------------Select---------------" /> 
                                     <f:selectItems value="#{city.allCities}"/>
                                 </h:selectOneMenu></td></tr>
 
-                        
+
 
                         <tr><td><label><b>Route2&nbsp;&nbsp;</b></label></td>
 
                             <td>  <h:selectOneMenu value="#{route.route2}" >
-                                    <f:selectItem itemValue = "" itemLabel = "---Select---" /> 
+                                    <f:selectItem itemValue = "" itemLabel = "---------------Select---------------" /> 
                                     <f:selectItems value="#{city.allCities}"/>
                                 </h:selectOneMenu></td></tr>
 
-                        
+
                         <tr><td>  <label><b>Route3&nbsp;&nbsp;</b></label></td>
 
                             <td>
                                 <h:selectOneMenu value="#{route.route3}" >
-                                    <f:selectItem itemValue = "" itemLabel = "---Select---" /> 
+                                    <f:selectItem itemValue = "" itemLabel = "---------------Select---------------" /> 
                                     <f:selectItems value="#{city.allCities}"/>
                                 </h:selectOneMenu>
                             </td></tr>
-                       
+
                         <tr><td>          <label><b>Route4&nbsp;&nbsp;</b></label></td>
                             <td><h:selectOneMenu value="#{route.route4}" >
-                                    <f:selectItem itemValue = "" itemLabel = "---Select---" /> 
+                                    <f:selectItem itemValue = "" itemLabel = "---------------Select---------------" /> 
                                     <f:selectItems value="#{city.allCities}"/>
                                 </h:selectOneMenu></td></tr>
 
-                        
+
 
                         <tr><td><label><b>Total distance</b></label></td>
                             <td><h:inputText value="#{route.total_distance}" pt:placeholder="Enter Total Distance"/></td></tr>
-                      
+
 
                         <tr><td> <label><b>Flag&nbsp;&nbsp;</b></label></td>
                             <td><h:selectOneMenu value = "#{route.flag}">
-                                    <f:selectItem itemValue = "" itemLabel = "---Select---" /> 
+                                    <f:selectItem itemValue = "" itemLabel = "---------------Select---------------" /> 
                                     <f:selectItem itemValue = "1" itemLabel = "1" /> 
                                     <f:selectItem itemValue = "2" itemLabel = "2" />
                                     <f:selectItem itemValue = "3" itemLabel = "3" /> 
@@ -243,23 +245,22 @@
                 <table>
                     <tr>  
                         <td><label><b>Add City</b></label></td>
-                        <td></td>
-                    </tr>
-                    <tr>
                         <td><h:inputText value="#{city.cityname}" pt:placeholder="Enter City name"/></td>
-                        <td><div class="clearfix">
-                            <h:commandButton value="Add city" action="#{city.add}"/>
-                          </div>
+                        <td>
+                            <div class="clearfix">
+                                <h:commandButton value="Add city" action="#{city.add}"/>
+                            </div>
                         </td>
                     </tr>
                     <tr>
-                         <td><label><b>Current City List</b></label></td>      
+                        <td><label><b>Current City List</b></label></td>      
                         <td><h:selectOneMenu value="#{city.selectedCategory}" >
-                            <f:selectItem itemValue = "" itemLabel = "---Select---" /> 
+                                <f:selectItem itemValue = "" itemLabel = "---------------Select---------------" /> 
                                 <f:selectItems value="#{city.allCities}"/>
                             </h:selectOneMenu></td>
+                        <td></td>
                     </tr>
-                    </table>                
+                </table>                
             </h:form>  
         </div>
 
@@ -268,14 +269,15 @@
 
         <div id="Journey" class="tabcontent">
             <h:form>
-                <h3>Enter journey details here</h3>
+                
                 <div class="container">
+                    <h3>Enter journey details here</h3>
                     <table>
                         <tr>
                             <td>
                                 <label><b>Vehicle type</b></label></td>
                             <td> <h:selectOneMenu value = "#{journey.vehicletype}">
-                                    <f:selectItem itemValue = "" itemLabel = "---Select---" /> 
+                                    <f:selectItem itemValue = "" itemLabel = "---------------Select---------------" /> 
                                     <f:selectItem itemValue = "Car" itemLabel = "Car" /> 
                                     <f:selectItem itemValue = "Truck" itemLabel = "Truck" />
                                     <f:selectItem itemValue = "Bus" itemLabel = "Bus" /> 
@@ -288,7 +290,7 @@
                                 <label><b>Vehicle Number</b></label></td>
                             <td> 
                                 <h:selectOneMenu value="#{journey.vehicleno}" >
-                                    <f:selectItem itemValue = "" itemLabel = "---Select---" /> 
+                                    <f:selectItem itemValue = "" itemLabel = "---------------Select---------------" /> 
                                     <f:selectItems value="#{vehicle.allVehicles}"/>
                                 </h:selectOneMenu>
                             </td>
@@ -298,7 +300,7 @@
                                 <label><b>Route Id</b></label></td>
                             <td>
                                 <h:selectOneMenu value="#{journey.routeid}" >
-                                    <f:selectItem itemValue = "" itemLabel = "---Select---" /> 
+                                    <f:selectItem itemValue = "" itemLabel = "---------------Select---------------" /> 
                                     <f:selectItems value="#{route.allRoutes}"/>
                                 </h:selectOneMenu>
                             </td>
@@ -309,7 +311,7 @@
                         <tr>
                             <td><label><b>Flag</b></label></td>
                             <td><h:selectOneMenu value = "#{journey.flag}">
-                                    <f:selectItem itemValue = "" itemLabel = "---Select---" /> 
+                                    <f:selectItem itemValue = "" itemLabel = "---------------Select---------------" /> 
                                     <f:selectItem itemValue = "1" itemLabel = "1" /> 
                                     <f:selectItem itemValue = "2" itemLabel = "2" />
                                     <f:selectItem itemValue = "3" itemLabel = "3" /> 
@@ -325,7 +327,7 @@
                         <tr>
                             <td><label><b>Journey Status</b></label></td>
                             <td><h:selectOneMenu value = "#{journey.journey_status}">
-                                    <f:selectItem itemValue = "" itemLabel = "---Select---" /> 
+                                    <f:selectItem itemValue = "" itemLabel = "---------------Select---------------" /> 
                                     <f:selectItem itemValue = "Open" itemLabel = "Open" /> 
                                     <f:selectItem itemValue = "Transit" itemLabel = "Transit" />
                                     <f:selectItem itemValue = "Closed" itemLabel = "Closed" /> 
