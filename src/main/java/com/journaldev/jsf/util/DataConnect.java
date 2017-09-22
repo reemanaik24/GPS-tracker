@@ -44,7 +44,8 @@ public class DataConnect {
             System.out.println("user = " + user);
             System.out.println("pass = " + pwd);
             */
-             /*Class.forName(System.getenv("MYSQL_DRIVER"));
+            
+            /* Class.forName(System.getenv("MYSQL_DRIVER"));
 	String url = System.getenv("MYSQL_URL");;
         String user= System.getenv("MYSQL_USER");
         String pwd = System.getenv("MYSQL_ROOT_PASSWORD"); */

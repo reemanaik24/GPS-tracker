@@ -10,22 +10,11 @@ and open the template in the editor.
     <head>
         <title>TODO supply a title</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-               <style>
-            body
-    {
-        background-image:url("track.jpg");
-        background-size: 1366px 768px;
-        background-repeat: no-repeat;
-        color: white;
-        
-    }    
-        </style>
     </head>
     <body>
-<h:form>
-    <img src="resources/images/techm.png" style="width:160px;height:50px;" align="right"/>
-<h:outputText value="Error into adding data "/>
-<h:outputLink value="register.xhtml">Data already exist</h:outputLink>
-</h:form>
+      <h:commandLink action="login.xhtml">  
+         <h:outputText value="Login here"></h:outputText>  
+         </h:commandLink> 
     </body>
 </html>
+

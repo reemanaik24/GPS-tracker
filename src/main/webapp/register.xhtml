@@ -5,14 +5,84 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Register</title>
+        <style>
+     body
+    {
+        background-image:url("track.jpg");
+        background-size: 1366px 768px;
+        background-repeat: no-repeat;
+        color: white;
+        
+    }
+    input[type=text], input[type=password] {
+   width: 120%;
+    padding: 2px 4px;
+    margin: 0px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+
+.button {
+    background-color: grey;
+    color: white;
+    padding: 7px 5px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+    margin-left: 0px;
+    margin-top: 10px;
+   
+
+    }
+
+     .button:hover {
+    opacity: 0.8;
+}
+
+    .cancelbtn {
+    background-color: grey;
+    color: white;
+    padding: 7px 17px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 700%;
+    margin-left: -64px;
+    margin-top: 10px;
+
+
+}
+
+  .cancelbtn:hover {
+    opacity: 0.8;
+}
+
+     .imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+
+   .container {
+    padding: 120px;
+      }
+
+
+        </style>
     </h:head>
     <h:body>
      <f:view>
 <h:form>
+    <img src="resources/images/techm.png" style="width:160px;height:50px;" align="right"/>
+            <div class="container">
 <table>
 <tr>
 <td> <h:messages showDetail="true" /> </td>
 </tr>
+    <h2>Register here</h2>
 <tr>
 <td><h:outputText value="Enter Username : " /></td>
 <td><h:inputText value="#{user.uname}" /></td>
@@ -40,9 +110,12 @@
    
 <tr>
 <td></td>
-<td><h:commandButton value="Insert" action="#{user.add}"/></td>
+<td><h:commandButton value="Submit" action="#{user.add}" styleClass="button"/></td>
+<td><h:commandButton action="#{login.xhtml}" styleClass="cancelbtn" 
+            value="Cancel"> </h:commandButton></td>
 </tr>
 </table>
+                </div>
 </h:form>
 </f:view>
     </h:body>
